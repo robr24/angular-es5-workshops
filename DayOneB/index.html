@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Day One</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body data-ng-controller="StoreController as storeCtrl">
+    <h4>{{storeCtrl.date | date: 'EEEE: MMMM d, yyyy'}}</h4>
+    <div ng-repeat="product in storeCtrl.products | limitTo: 3 | orderBy: '-price'"
+    >
+        <!-- <p>{{key}}: {{value}}</p> -->
+
+        <h1>{{product.name | uppercase}}</h1>
+        <h4>{{product.price | currency}}</h4>
+        <img ng-src="{{product.imgUrl}}" alt="">
+
+         <section  ng-controller="TabsController as tabsCtrl">
+            <ul class="nav nav-pills">
+                <li>
+                    <a href ng-click="tabsCtrl.selectTab(1)">
+                        Description
+                    </a>
+                </li>
+                <li>
+                    <a href ng-click="tabsCtrl.selectTab(2)">
+                        Specifications
+                    </a>
+                </li>
+                <li>
+                    <a href ng-click="tabsCtrl.selectTab(3)">
+                        Reviews
+                    </a>
+                </li>
+            </ul>
+
+            <h1>{{tabsCtrl.tab}}</h1>
+
+
+            <div class="tabs">
+                <div class="panel" ng-show="tabsCtrl.isSelected(1)">
+                    <h4>Description</h4>
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="panel" ng-show="tabsCtrl.isSelected(2)">
+                    <h4>Specifications</h4>
+                    <p>{{product.specifications}}</p>
+                </div>
+                <div class="panel" ng-show="tabsCtrl.isSelected(3)">
+                    <h4>Reviews</h4>
+                    <p>None yet</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <button ng-show="product.canPurchase">Add to Cart</button>
+    </div>
+
+
+
+
+
+</body>
+</html>

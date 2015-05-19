@@ -1,0 +1,16 @@
+{
+  "name": "DayOneB",
+  "version": "0.0.0",
+  "authors": [
+    "Rob Riggs <robr24@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
