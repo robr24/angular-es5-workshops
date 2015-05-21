@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('redditApp', []);
+        .module('redditApp', ['infinite-scroll']);
 })();

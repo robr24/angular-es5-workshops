@@ -1,3 +1,45 @@
 <div class="reddit-view" ng-controller="RedditController as redditCtrl">
-    <h1>Hello</h1>
+
+    <div style="text-align: right;">
+        <input type="date" sc-date-picker ng-model="redditCtrl.dateModel">
+    </div>
+
+    <h3>{{redditCtrl.dateModel}}</h3>
+
+
+    <div class="busy" ng-show="redditCtrl.reddit.inProgress()">
+        <h1>Busy</h1>
+    </div>
+
+     <div infinite-scroll="redditCtrl.reddit.nextPage()"
+         infinite-scroll-disabled="redditCtrl.reddit.inProgress()"
+         infinite-scroll-distance="3">
+
+        <ul class="news-item row" ng-repeat="item in redditCtrl.reddit.items"
+            id="news-{{item.id}}" ng-class-odd="'odd'" ng-class-even="'even'">
+            <li class="news-item-list rank">
+                {{item.score}}
+            </li>
+            <li class="news-item-list vote">
+                <a class="glyphicon glyphicon-arrow-up" ng-click="voteUp"></a>
+                <a class="glyphicon glyphicon-arrow-down" ng-click="voteDown"></a>
+            </li>
+            <li class="news-item-list">
+                <a href="javascript://">
+                    <img ng-src="{{redditCtrl.reddit.sanitizeImageUri(item.thumbnail)}}" class="img_thumb"/>
+                </a>
+            </li>
+            <li class="news-item-list desc">
+                <span>
+                    <a ng-href="{{item.url}}" target="_blank">
+                        {{item.title}}
+                    </a>
+                </span>
+                <br><br>
+                <span>submitted {{item.hours}} hours ago by {{item.author}}</span>
+            </li>
+        </ul>
+
+    </div>
+
 </div>

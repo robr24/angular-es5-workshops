@@ -5,11 +5,13 @@
         .module('redditApp')
         .controller('RedditController', Controller);
 
-    Controller.$inject = ['RedditService'];
+    Controller.$inject = ['RedditFactory'];
 
     /* @ngInject */
-    function Controller(RedditService) {
+    function Controller(RedditFactory) {
         var vm = this;
+        vm.dateModel = new Date();
+        vm.reddit = RedditFactory;
 
 
         activate();
@@ -17,19 +19,8 @@
         ////////////////
 
         function activate() {
-            getData();
             // vm.reddit.nextPage();
         }
 
-        // this will get piped into a factory,
-        // but we can use it for testing for now
-        function getData() {
-            RedditService.nextPage()
-                .then(function (response) {
-                    console.log(response);
-                }).catch(function (error) {
-                    console.log('error: ', error);
-                });
-        }
     }
 })();
