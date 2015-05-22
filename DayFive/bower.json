@@ -1,0 +1,21 @@
+{
+  "name": "Angular Forms",
+  "version": "0.0.0",
+  "homepage": "https://github.com/robr24/angular-es5-workshops",
+  "authors": [
+    "Rob Riggs <robr24@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angular": "~1.3.15"
+  }
+}
