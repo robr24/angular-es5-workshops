@@ -1,3 +1,19 @@
 .login-view {
     padding: 10px 20px;
 }
+
+input.ng-invalid.ng-touched {
+    border: solid 1px #c00;
+    background-color: #fff;
+}
+
+.password {
+    position: relative;
+}
+
+#showPassword {
+    position: absolute;
+    right: 8px;
+    top: 30px;
+    font-size: 20px;
+}
