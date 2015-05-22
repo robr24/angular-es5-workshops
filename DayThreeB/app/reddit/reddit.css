@@ -1,0 +1,51 @@
+
+a {
+    outline: none;
+}
+
+.news-item {
+    list-style: none;
+    border-bottom: solid 1px #ccc;
+}
+    .news-item-list {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px 20px;
+    }
+
+    .rank {
+        width: 60px;
+    }
+
+    .vote a {
+        text-decoration: none;
+        display: block;
+        padding: 6px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .desc {
+        width: 60%;
+    }
+
+    .even {
+        background-color: #ffc;
+    }
+
+.img_thumb {
+    width: 70px;
+    height: 70px;
+}
+
+.busy {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    padding: 45% 0;
+    text-align: center;
+}
